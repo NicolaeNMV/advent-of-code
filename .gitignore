@@ -1,0 +1,71 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Byte-compiled / optimized / DLL files
+**/*.class
+**/target/
+
+# Dependency directories
+lib_managed/
+project/boot/
+project/plugins/project/
+
+# Scala IDE specific
+.scala_dependencies
+.worksheet
+
+# SBT specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
+dist/
+tmp/
+out/
+
+# Worksheets (e.g. Eclipse Scala IDE)
+*.sc
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA files
+*.iml
+*.iws
+*.ipr
+.idea/
+.idea_modules/
+
+# VSCode files
+.vscode/
+
+# MacOS files
+.DS_Store
+
+# User-specific SBT files
+/.idea
+/.idea_modules
+
+# User-specific files (e.g., REPL history)
+.history
+.cache
+.credentials
+
+# Ensime files
+.ensime
+.ensime_cache/
+.ensime_lucene/
+
+# ENSIME specific cache
+.cache-main
+.cache-tests
