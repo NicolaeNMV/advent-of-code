@@ -29,8 +29,46 @@ object Day4ScratchCards extends App {
     }
     result.toSeq.sum
   }
+
+
+  def part2(input: Array[String]): Int = {
+    val matchingByCard: Map[Int, Int] =
+      input.zipWithIndex.map { case (line, index) =>
+
+      val (myNumbers, winningNumbers) = extractNumbersAndWinners(line)
+
+      val totalMatching: Seq[Int] = myNumbers.intersect(winningNumbers)
+      (index, totalMatching.length)
+    }.toMap
+
+    def sumTotalMatches(line: Int): Int = {
+      val total = matchingByCard.lift(line)
+      total match {
+        case Some(matching) if matching > 0 =>
+          val result = (1 to matching).map { winAfterMatchingCard =>
+            sumTotalMatches(line + winAfterMatchingCard)
+          }.sum
+
+          // count the original card
+          result + 1
+
+        case Some(matching) if matching == 0 =>
+          1
+
+        case _ => 0
+      }
+    }
+
+
+    (0 until input.size).map { index =>
+      sumTotalMatches(index)
+    }.sum
+  }
+
   assert(part1(Day4Input.part1Input) == 13)
-  println(part1(Day4Input.fullInput))
+  //println(part1(Day4Input.fullInput))
+  assert(part2(Day4Input.part1Input) == 30)
+  println(part2(Day4Input.fullInput))
 
 }
 
