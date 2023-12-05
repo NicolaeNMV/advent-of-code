@@ -1,3 +1,5 @@
+package aoc2023
+
 import scala.collection.mutable
 
 object Day1 extends App {
