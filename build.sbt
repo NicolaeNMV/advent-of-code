@@ -10,5 +10,6 @@ version := "0.1"
 // Set up a simple project library dependency
 libraryDependencies ++= Seq(
   // For testing, you might include ScalaTest:
-  "org.scalatest" %% "scalatest" % "3.2.9" % Test
+  "org.scalatest" %% "scalatest" % "3.2.9" % Test,
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
 )
